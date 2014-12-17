@@ -1,0 +1,26 @@
+parent.0 = ../koza.params
+
+# Generations and Population
+generations = 500
+pop.subpop.0.size     = 500
+
+gp.fs.size = 1
+gp.fs.0.size = 6
+gp.fs.0.name = f0
+gp.fs.0.func.0 = ec.app.ant.func.Left
+gp.fs.0.func.0.nc = nc0
+gp.fs.0.func.1 = ec.app.ant.func.Right
+gp.fs.0.func.1.nc = nc0
+gp.fs.0.func.2 = ec.app.ant.func.Move
+gp.fs.0.func.2.nc = nc0
+gp.fs.0.func.3 = ec.app.ant.func.IfFoodAhead
+gp.fs.0.func.3.nc = nc2
+gp.fs.0.func.4 = ec.app.ant.func.Progn2
+gp.fs.0.func.4.nc = nc2
+gp.fs.0.func.5 = ec.app.ant.func.Progn3
+gp.fs.0.func.5.nc = nc3
+
+eval.problem = ec.app.ant.Ant
+eval.problem.data = ec.gp.GPData
+eval.problem.moves = 400
+eval.problem.file = santafe.trl

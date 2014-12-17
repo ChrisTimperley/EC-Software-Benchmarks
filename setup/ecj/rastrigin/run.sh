@@ -1,0 +1,1 @@
+java -cp ".;C:/EvoTools/ecj/" ec.Evolve -file rastrigin.params

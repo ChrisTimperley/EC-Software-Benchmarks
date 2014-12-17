@@ -1,0 +1,11 @@
+# Multi-threading and RNG seed
+# ==============================
+breedthreads = 1
+evalthreads = 1
+seed.0 = 1
+
+# Checkpointing
+# ==============================
+checkpoint    = false
+checkpoint-prefix = ec
+checkpoint-modulo = 1

@@ -1,0 +1,56 @@
+Genetic Algorithms
+- OneMax
+- Travelling Salesman Problem
+- 
+
+Genetic Programming
+- Artificial Ant, Santa Fe Trail
+- 5x5 Multiplexer
+- Lawnmower Problem
+
+Grammatical Evolution
+- Symbolic Regression
+-
+-
+
+1) OneMax (n=100)
+- Representation: Int vector (length = 100, bounds = [0, 1])
+- Population size: 1000
+- Generations: 10,000
+- Selection: Tournament Selection (n = 2)
+- Crossover: One Point
+- Mutation: Bit Flip Mutation (p=0.01)
+
+2) Rastrigin (n=100)
+- Representation: Float vector (length = 100, bounds = [-5.12, 5.12])
+- Population size: 1000
+- Generations: 10,000
+- Selection: Tournament Selection (n = 2?)
+- Crossover: One Point
+- Mutation: Gaussian (p=0.01, mu=0.0, std=1.0)
+
+3) ???
+
+4) Multiplexer
+- Representation: Koza tree
+- Population size: 500
+- Generations: 500
+- Selection: Tournament Selection (n = 7)
+- Crossover: 
+- Mutation: 
+
+5) Symbolic Regression
+- Representation: Koza tree
+- Population size: 500
+- Generations: 500
+- Selection: Tournament Selection (n = 7)
+- Crossover: 
+- Mutation: 
+
+6) Artificial Ant (Santa-Fe)
+- Representation: Koza tree
+- Population size: 500
+- Generations: 500
+- Selection: Tournament Selection (n = 7)
+- Crossover: ?
+- Mutation: ?

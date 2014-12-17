@@ -1,0 +1,1 @@
+(time (sh run.sh &> nul)) &> times.txt

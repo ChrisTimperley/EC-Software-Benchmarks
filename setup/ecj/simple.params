@@ -1,0 +1,33 @@
+# Copyright 2006 by Sean Luke and George Mason University
+# Licensed under the Academic Free License version 3.0
+# See the file "LICENSE" for more information
+parent.0 = ec.params
+
+# ec.EvolutionState
+# ==============================
+state = ec.simple.SimpleEvolutionState
+init = ec.simple.SimpleInitializer
+finish = ec.simple.SimpleFinisher
+exch = ec.simple.SimpleExchanger
+breed = ec.simple.SimpleBreeder
+eval = ec.simple.SimpleEvaluator
+stat = ec.simple.SimpleStatistics
+quit-on-run-complete = false
+
+# ec.Initializer
+# ==============================
+pop = ec.Population
+
+# ec.Population
+# ==============================
+pop.subpops = 1
+pop.subpop.0 = ec.Subpopulation
+
+# ec.Subpopulation
+# ==============================
+pop.subpop.0.size = 1000
+pop.subpop.0.duplicate-retries =	0
+
+# ec.SimpleStatistics
+# ==============================
+stat.silent = true
