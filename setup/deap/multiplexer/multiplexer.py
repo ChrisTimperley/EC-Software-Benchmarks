@@ -79,13 +79,12 @@ toolbox.register("expr_mut", gp.genGrow, min_=0, max_=2)
 toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
 
 def main():
-    random.seed(10)
-    generations = 500
-    cxpb = 1.0
-    mpb = 1.0
-    pop = toolbox.population(n=500)
+    generations = 1000
+    cxpb = 0.9
+    mpb = 0.1
+    pop = toolbox.population(n=100)
     
-    algorithms.eaSimple(pop, toolbox, cxpb, mpb, generations)
+    algorithms.eaSimple(pop, toolbox, cxpb, mpb, generations, verbose=False)
     
     return pop
 

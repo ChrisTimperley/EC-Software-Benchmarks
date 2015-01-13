@@ -1,1 +1,1 @@
-java -cp ".;C:/EvoTools/ecj/" ec.Evolve -file multiplexer.params
+java ec.Evolve -file multiplexer.params
