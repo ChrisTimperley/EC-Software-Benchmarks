@@ -4,20 +4,21 @@ import net.sf.jclec.IIndividual;
 import net.sf.jclec.base.AbstractEvaluator;
 import net.sf.jclec.fitness.SimpleValueFitness;
 import net.sf.jclec.fitness.ValueFitnessComparator;
-import net.sf.jclec.realarray.RealArrayIndividual;
+import net.sf.jclec.binarray.BinArrayIndividual;
 
-public class Rastrigin extends AbstractEvaluator
+public class OneMax extends AbstractEvaluator
 {
-  protected boolean maximize = false;
+  protected boolean maximize = true;
   private Comparator<IFitness> COMPARATOR;
 
   protected void evaluate(IIndividual ind)
   {
-    double[] genotype = (double[])((RealArrayIndividual)ind).getGenotype();
-    double fitness = 0.0D;
+    byte[] genotype = (byte[])((BinArrayIndividual)ind).getGenotype();
+    int fitness = 0;
 
     for (int i = 0; i < genotype.length; i++) {
-      fitness += Math.pow(genotype[i], 2.0D) - 10.0D * Math.cos(6.2831853071D * genotype[i]) + 10.0D;
+      if (genotype[i] == 1)
+        fitness += 1;
     }
 
     ind.setFitness(new SimpleValueFitness(fitness));
