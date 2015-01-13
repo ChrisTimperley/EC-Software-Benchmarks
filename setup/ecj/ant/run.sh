@@ -1,1 +1,1 @@
-java -cp ".;C:/EvoTools/ecj/" ec.Evolve -file ant.params
+java ec.Evolve -file ant.params

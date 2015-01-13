@@ -29,8 +29,8 @@ toolbox.register("select", tools.selTournament, tournsize=2)
 def main():
     random.seed(64)
     
-    pop = toolbox.population(n=1000)
-    CXPB, MUTPB, NGEN = 1.0, 1.0, 10000
+    pop = toolbox.population(n=100)
+    CXPB, MUTPB, NGEN = 1.0, 1.0, 1000
     
     # Evaluate the entire population
     fitnesses = list(map(toolbox.evaluate, pop))
@@ -68,7 +68,6 @@ def main():
         pop[:] = offspring
     
     best_ind = tools.selBest(pop, 1)[0]
-    print("Best individual is %s, %s" % (best_ind, best_ind.fitness.values))
 
 if __name__ == "__main__":
     main()

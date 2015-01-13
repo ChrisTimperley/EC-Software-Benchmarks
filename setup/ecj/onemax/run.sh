@@ -1,1 +1,1 @@
-java -cp ".;C:/EvoTools/ecj/" ec.Evolve -file onemax.params
+java ec.Evolve -file onemax.params

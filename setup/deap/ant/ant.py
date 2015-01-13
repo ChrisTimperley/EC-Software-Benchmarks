@@ -182,11 +182,11 @@ def main():
   ant.parse_matrix(trail_file)
 
   cxpb = 1.0
-  mpb = 1.0
-  generations = 500
-  pop = toolbox.population(n=500)
+  mpb = 0.1
+  generations = 1000
+  pop = toolbox.population(n=100)
 
-  algorithms.eaSimple(pop, toolbox, mpb, cxpb, generations)
+  algorithms.eaSimple(pop, toolbox, mpb, cxpb, generations, verbose=False)
 
   return pop
 

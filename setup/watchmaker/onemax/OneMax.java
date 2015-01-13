@@ -19,7 +19,7 @@ public class OneMax
 {
 
   private static final int GENS = 1000;
-  private static final int POP_SIZE = 1000;
+  private static final int POP_SIZE = 100;
   private static final int BITS = 100;
   private static final int ELITISM = 0;
 
@@ -31,7 +31,7 @@ public class OneMax
   public static BitString evolveBits(int length)
   {
       List<EvolutionaryOperator<BitString>> operators = new ArrayList<EvolutionaryOperator<BitString>>(2);
-      operators.add(new BitStringCrossover(1, new Probability(0.7d)));
+      operators.add(new BitStringCrossover(1, new Probability(1.0d)));
       operators.add(new BitStringMutation(new Probability(0.01d)));
       EvolutionaryOperator<BitString> pipeline = new EvolutionPipeline<BitString>(operators);
       GenerationalEvolutionEngine<BitString> engine = new GenerationalEvolutionEngine<BitString>(

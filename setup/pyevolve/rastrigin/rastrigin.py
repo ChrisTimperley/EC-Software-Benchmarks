@@ -23,12 +23,7 @@ genome.evaluator.set(rastrigin)
 # Genetic Algorithm Instance
 ga = GSimpleGA.GSimpleGA(genome)
 ga.minimax = Consts.minimaxType["minimize"]
-ga.setGenerations(10000)
-ga.setPopulationSize(1000)
+ga.setGenerations(1000)
+ga.setPopulationSize(100)
 ga.setMutationRate(0.01)
 ga.evolve()
-
-# Best individual
-best = ga.bestIndividual()
-print "\nBest individual score: %.2f" % (best.score,)
-print best

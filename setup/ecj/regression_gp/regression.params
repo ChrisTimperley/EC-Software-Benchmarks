@@ -2,7 +2,7 @@ parent.0 = ../koza.params
 
 # Generations and Population
 generations = 1000
-pop.subpop.0.size     = 1000
+pop.subpop.0.size     = 100
 
 gp.fs.size = 1
 gp.fs.0.name = f0
@@ -31,7 +31,7 @@ gp.fs.0.func.8.nc = nc1
 # gp.fs.0.func.9 = ec.app.regression.func.RegERC
 # gp.fs.0.func.9.nc = nc0
 
-eval.problem = ec.app.regression.Sextic
+eval.problem = ec.app.regression.Regression
 eval.problem.data = ec.app.regression.RegressionData
 
 # The size of our training set, by default, is 20

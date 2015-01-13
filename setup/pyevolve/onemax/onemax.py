@@ -14,6 +14,6 @@ genome.crossover.set(Crossovers.G1DBinaryStringXSinglePoint)
 
 ga = GSimpleGA.GSimpleGA(genome)
 ga.selector.set(Selectors.GTournamentSelector)
-ga.setGenerations(10000)
-ga.setPopulationSize(1000)
+ga.setGenerations(1000)
+ga.setPopulationSize(100)
 ga.evolve()

@@ -38,7 +38,7 @@ pset.addPrimitive(protectedDiv, 2)
 pset.addPrimitive(operator.neg, 1)
 pset.addPrimitive(math.cos, 1)
 pset.addPrimitive(math.sin, 1)
-pset.addEphemeralConstant("rand101", lambda: random.randint(-1,1))
+#pset.addEphemeralConstant("rand101", lambda: random.randint(-1,1))
 pset.renameArguments(ARG0='x')
 
 creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
@@ -69,12 +69,10 @@ toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_v
 toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=17))
 
 def main():
-  random.seed(1)
-
-  generations = 500
+  generations = 1000
   cxpb = 1.0
   mpb = 1.0
-  pop = toolbox.population(n=500)
+  pop = toolbox.population(n=100)
   
   algorithms.eaSimple(pop, toolbox, cxpb, mpb, generations)
 

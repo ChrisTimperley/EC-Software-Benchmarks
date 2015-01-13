@@ -31,4 +31,5 @@ toolbox.register("select", tools.selTournament, tournsize=2)
 random.seed(64)
 
 # Algorithm
-algorithms.eaSimple(toolbox.population(n=1000), toolbox, cxpb=1.0, mutpb=1.0, ngen=10000)
+algorithms.eaSimple(toolbox.population(n=100), toolbox, cxpb=1.0, mutpb=1.0, ngen=1000,
+  verbose=False)
