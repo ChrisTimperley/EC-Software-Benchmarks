@@ -28,22 +28,21 @@ with open('results/{0}/{1}.csv'.format(package, experiment), 'wb') as f:
 
   # Write the CSV file header.
   w.writerow(["real", "user", "sys"])
-  
-  print "Running {0}/{1}".format(package, experiment)
 
   # Change to the experiment directory.
   os.chdir("setup/{0}/{1}/".format(package, experiment))
-
+  
   # Prepare the experiment.
-  subprocess.call(["sh", "setup.sh"], shell=True)
+  subprocess.call(["sh", "setup.sh"])#, shell=True)
 
   # Create the timing script.
   with open('timer.sh', 'w') as tf:
-    tf.write("(time (sh run.sh &> nul)) &> times.txt")
+    tf.write("#!/usr/bin/env bash\n" +
+      "(time (sh run.sh &> /dev/null)) &> times.txt")
 
   # Repeat the experiment a given number of times.
   for i in range(RUNS):
-    subprocess.call(["sh", "timer.sh"], shell=True)
+    subprocess.call(["bash", "timer.sh"])
 
     # Read, format and insert the times.
     with open('times.txt', 'r') as times:
@@ -59,4 +58,5 @@ with open('results/{0}/{1}.csv'.format(package, experiment), 'wb') as f:
   os.remove('timer.sh')
 
   # Return to the main EvoTools directory.
+  print "Returning to EvoTools directory."
   os.chdir("../../../")
