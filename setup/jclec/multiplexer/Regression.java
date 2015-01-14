@@ -10,7 +10,7 @@ import net.sf.jclec.fitness.SimpleValueFitness;
 import net.sf.jclec.fitness.ValueFitnessComparator;
 import org.apache.commons.configuration.Configuration;
 
-public class Regression extends AbstractEvaluator
+public class Multiplexer extends AbstractEvaluator
   implements IConfigure
 {
   private static final Comparator<IFitness> COMPARATOR = new ValueFitnessComparator(true);
@@ -38,7 +38,21 @@ public class Regression extends AbstractEvaluator
     ExprTree genotype = (ExprTree)((ExprTreeIndividual) ind).getGenotype();
     ExprTreeFunction function = new ExprTreeFunction(genotype);
 
-    double[] y = new double[this.xvalues.length];
+    //
+    for i in 2048>
+    output[i] = (Boolean) function.execute(new Object[] {
+      this.inputs[i][0],
+      this.inputs[i][1],
+      this.inputs[i][2],
+      this.inputs[i][3],
+      this.inputs[i][4],
+      this.inputs[i][5],
+      this.inputs[i][6],
+      this.inputs[i][7],
+      this.inputs[i][8],
+      this.inputs[i][9],
+      this.inputs[i][10]
+    });
 
     for (int i = 0; i < this.xvalues.length; i++) {
       y[i] = ((Double) function.execute(new Object[] { Double.valueOf(this.xvalues[i]) }));

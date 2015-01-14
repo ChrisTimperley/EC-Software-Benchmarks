@@ -77,9 +77,11 @@ toolbox.register("select", tools.selTournament, tournsize=7)
 toolbox.register("mate", gp.cxOnePoint)
 toolbox.register("expr_mut", gp.genGrow, min_=0, max_=2)
 toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr_mut, pset=pset)
+toolbox.decorate("mate", gp.staticLimit(operator.attrgetter('height'), 17))
+toolbox.decorate("mutate", gp.staticLimit(operator.attrgetter('height'), 17))
 
 def main():
-    generations = 1000
+    generations = 100
     cxpb = 0.9
     mpb = 0.1
     pop = toolbox.population(n=100)
