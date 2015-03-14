@@ -38,8 +38,8 @@ public class Multiplexer extends AbstractEvaluator
     ExprTree genotype = (ExprTree)((ExprTreeIndividual) ind).getGenotype();
     ExprTreeFunction function = new ExprTreeFunction(genotype);
 
+    int score = 0
     //
-    for i in 2048>
     output[i] = (Boolean) function.execute(new Object[] {
       this.inputs[i][0],
       this.inputs[i][1],
@@ -54,20 +54,9 @@ public class Multiplexer extends AbstractEvaluator
       this.inputs[i][10]
     });
 
-    for (int i = 0; i < this.xvalues.length; i++) {
-      y[i] = ((Double) function.execute(new Object[] { Double.valueOf(this.xvalues[i]) }));
-    }
-
-    double rms = 0.0D;
-
-    for (int i = 0; i < this.yvalues.length; i++) {
-      double diff = y[i] - this.yvalues[i];
-      rms += diff * diff;
-    }
-
     rms = Math.sqrt(rms);
 
-    ind.setFitness(new SimpleValueFitness(rms));
+    ind.setFitness(new SimpleValueFitness(2048 - score));
   }
 
   public Comparator<IFitness> getComparator()
